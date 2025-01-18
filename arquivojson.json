@@ -1,0 +1,24 @@
+{
+  "nome": "Daniel Angelus",
+  "sobrenome": "Alves",
+  "enderecos": [
+    {
+      "rua:": "R1",
+      "numero": 60
+    },
+    {
+      "rua:": "R2",
+      "numero": 61
+    }
+  ],
+  "altura": 1.7,
+  "numeros_preferidos": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "dev": true,
+  "nada": null
+}
