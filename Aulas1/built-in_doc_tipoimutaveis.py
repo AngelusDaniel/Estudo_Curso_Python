@@ -1,5 +1,7 @@
 
 
+print("teste"[:3])
+
 string = "danteste"
 
 outra_variavel = f"{string[:3]}ABC{string[4:]}"

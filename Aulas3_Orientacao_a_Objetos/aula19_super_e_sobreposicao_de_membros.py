@@ -29,7 +29,7 @@ class B(A):
   atributo_b = "valorb"
 
   def __init__(self, atributo):
-    super().__init__(atributo) #para possar o valor para o init A
+    super().__init__(atributo) #para passar o valor para o init A
 
   def metodo(self):
     print("B")
@@ -37,6 +37,11 @@ class B(A):
 
 class C(B):
   atributo_c = "valorc"
+
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    print("Burlei o sistema")
+
   def metodo(self):
     super(B, self).metodo()
     super().metodo()
