@@ -2,12 +2,13 @@
 #O(n)
 import numpy as np
 import timeit
+import random
 
 class VetorOrdenado:
   def __init__(self, capacidade):
     self.capacidade = capacidade
     self.ultimaposicao = -1
-    self.valores = np.empty(self.capacidade, dtype=int)
+    self.valores = np.empty(self.capacidade, dtype=float)
 
   # O(n)
   def imprime(self):
@@ -53,11 +54,12 @@ class VetorOrdenado:
   def pesquisa_binaria(self, value):
     limite_inferior = 0
     limite_superior = self.ultimaposicao
-
+    etapa = 0
     while True:
+      etapa +=1
       posicao_atual = int((limite_inferior + limite_superior)/2)
       if self.valores[posicao_atual] == value:
-        return posicao_atual
+        return posicao_atual, etapa
       elif limite_inferior > limite_superior:
         return -1
       else:
@@ -65,7 +67,8 @@ class VetorOrdenado:
           limite_inferior = posicao_atual + 1
         else:
           limite_superior = posicao_atual - 1 
-
+      
+    
 
 
     
@@ -79,20 +82,28 @@ class VetorOrdenado:
 
 
 
-vetor = VetorOrdenado(10000)
+elementos =[]
+
+for i in range(100):
+  elementos.append(i)
 
 
-for i in range(9000):
-  vetor.inserir(i)
+def insere_ordenado(lista):
+  vetor = VetorOrdenado(len(lista))
+  for i in lista:
+    vetor.inserir(i)
+  return vetor
+vetor = insere_ordenado(elementos)
 
-      
-vetor.imprime()
+#vetor.imprime()
+
+# print(vetor.pesquisa(0.7220))
 
 time = timeit.timeit(lambda: vetor.pesquisa_binaria(30), number=1000)
-print(vetor.pesquisa_binaria(30), time)
+print(vetor.pesquisa_binaria(33), time)
 
 time2 = timeit.timeit(lambda: vetor.pesquisa(30), number=1000)
-print(vetor.pesquisa(30), time2)
+print(vetor.pesquisa(45), time2)
 
       
 

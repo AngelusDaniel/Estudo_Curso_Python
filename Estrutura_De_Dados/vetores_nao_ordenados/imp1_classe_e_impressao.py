@@ -1,4 +1,4 @@
-
+import random
 #Vetor não ordenado
 #pesquisa linear
 #pesquisa média de n/2
@@ -14,7 +14,7 @@ class VetorNaoOrdenado:
   def __init__(self, capacidade):
     self.capacidade = capacidade
     self.ultima_posicao = -1
-    self.valores = np.empty(self.capacidade, dtype=int)
+    self.valores = np.empty(self.capacidade, dtype=float)
 
   #O(n)
   def imprime(self):
@@ -48,27 +48,22 @@ class VetorNaoOrdenado:
     self.ultima_posicao -= 1
 
 
-    
 
 
-vetor = VetorNaoOrdenado(5)
 
-vetor.insere(3)
-vetor.insere(2)
-vetor.insere(9)
-vetor.insere(5)
-vetor.insere(4)
-vetor.insere(7)
+elementos =[]
 
+for _ in range(10000):
+  elementos.append(round(random.random(), 4))
+
+
+def insere_nao_ordenado(lista):
+  vetor = VetorNaoOrdenado(len(lista))
+  for i in lista:
+    vetor.insere(i)
+  return vetor
+
+
+vetor = insere_nao_ordenado(elementos)
 vetor.imprime()
 
-print(vetor.pesquisar(5))
-
-vetor.excluir(4)
-vetor.excluir(2)
-vetor.excluir(3)
-vetor.imprime()
-print()
-vetor.insere(7)
-
-vetor.imprime()
