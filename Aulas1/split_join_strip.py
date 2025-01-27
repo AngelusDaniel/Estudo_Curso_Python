@@ -5,10 +5,17 @@ frase = " Frase programação python, teste"
 lista_palavras_crua = frase.split()
 
 lista_palavras = []
+lista_palavras2 = []
 
+print(lista_palavras_crua)
 
-for i, frase in enumerate(lista_palavras_crua):
-  lista_palavras.append(lista_palavras_crua[i].strip())  #retira os espaços inicio e final, tem o rstrip e o lstrip
+# for plv in lista_palavras_crua:
+#   lista_palavras2.append(plv.strip());
+
+# print(lista_palavras2)
+
+for i, plv in enumerate(lista_palavras_crua):
+  lista_palavras.append(plv.strip())  #retira os espaços inicio e final, tem o rstrip e o lstrip
 
 print(lista_palavras)
 # print(lista_palavras_crua)

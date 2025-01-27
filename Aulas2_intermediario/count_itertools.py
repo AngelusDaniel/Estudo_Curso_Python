@@ -12,6 +12,8 @@ print("")
 print("r1", hasattr(r1, "__iter__"))
 print("r1", hasattr(r1, "__next__"))
 
+
+
 for i in c1:
   if i >= 100:
     break
